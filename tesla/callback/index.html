@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tesla Authorisation</title>
+</head>
+<body>
+  <h1>Tesla authorisation received</h1>
+  <p>Copy the complete address from your browser address bar and keep it private.</p>
+
+  <pre id="result"></pre>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    document.getElementById("result").textContent =
+      params.has("code")
+        ? "Authorisation code received successfully."
+        : "No authorisation code was found.";
+  </script>
+</body>
+</html>
